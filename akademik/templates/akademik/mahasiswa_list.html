@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daftar Mahasiswa</title>
+</head>
+<body>
+    <h1>Daftar Mahasiswa</h1>
+    <ul>
+        {% for mhs in object_list %}
+            <li>
+                <a href="{% url 'mahasiswa-detail' mhs.id %}">
+                    {{ mhs.nama }} - NIM: {{ mhs.nim }}
+                </a>
+            </li>
+        {% empty %}
+            <li>Belum ada data mahasiswa.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

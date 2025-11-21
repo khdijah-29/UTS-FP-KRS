@@ -1,0 +1,22 @@
+<h1>Daftar Semua Pendaftaran Mata Kuliah</h1>
+
+<ul>
+    {% for p in object_list %}
+        <li>
+            {{ p.mahasiswa.nama }} mengambil 
+            {{ p.matakuliah.nama_mk }} 
+            (Semester {{ p.semester }})
+
+
+            | <a href="{% url 'krs-edit' p.pk %}">Edit</a>
+            | <a href="{% url 'krs-hapus' p.pk %}">Hapus</a>
+        </li>
+    {% empty %}
+        <li>Tidak ada pendaftaran mata kuliah.</li>
+    {% endfor %}
+</ul>
+
+<!-- Opsional: tombol tambah -->
+<p>
+    <a href="{% url 'krs-tambah' %}">Tambah Pendaftaran</a>
+</p>

@@ -1,0 +1,9 @@
+<h1>Hapus Pendaftaran Mata Kuliah</h1>
+
+<p>Hapus KRS: <strong>{{ object.matakuliah.nama_mk }}</strong> milik {{ object.mahasiswa.nama }}?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Hapus</button>
+    <a href="{% url 'krs-list' %}">Batal</a>
+</form>

@@ -1,0 +1,22 @@
+<h1>{{ object.nama }} ({{ object.nim }})</h1>
+<p>Jurusan: {{ object.jurusan }}</p>
+
+<p><a href="{% url 'mahasiswa-list' %}">← Kembali ke daftar mahasiswa</a>
+    <a href="{% url 'mahasiswa-edit' object.pk %}">Edit</a> |
+    <a href="{% url 'mahasiswa-hapus' object.pk %}">Hapus</a>
+</p>
+
+<hr>
+<h2>Kartu Rencana Studi (KRS)</h2>
+
+<ul>
+    {% for ambil in object.krs.all %}
+        <li>
+            {{ ambil.matakuliah.nama_mk }}
+            ({{ ambil.matakuliah.kode_mk }})
+            - Semester: {{ ambil.semester }}
+        </li>
+    {% empty %}
+        <li>Belum ada mata kuliah yang diambil.</li>
+    {% endfor %}
+</ul>

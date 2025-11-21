@@ -1,0 +1,9 @@
+<h1>Tambah Mahasiswa</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Simpan</button>
+</form>
+
+<a href="{% url 'mahasiswa-list' %}">Kembali</a>

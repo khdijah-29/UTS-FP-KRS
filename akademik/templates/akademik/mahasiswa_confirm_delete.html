@@ -1,0 +1,9 @@
+<h1>Hapus Mahasiswa</h1>
+
+<p>Apakah Anda yakin ingin menghapus mahasiswa: <strong>{{ object.nama }}</strong>?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Hapus</button>
+    <a href="{% url 'mahasiswa-detail' object.pk %}">Batal</a>
+</form>

@@ -1,0 +1,9 @@
+<h1>Tambah Pendaftaran Mata Kuliah (KRS)</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Simpan</button>
+</form>
+
+<a href="{% url 'krs-list' %}">Kembali</a>
