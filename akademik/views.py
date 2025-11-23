@@ -92,13 +92,16 @@ class PendaftaranDetailAPI(RetrieveAPIView):
 class MahasiswaViewSet(viewsets.ModelViewSet):
     queryset = Mahasiswa.objects.all()
     serializer_class = MahasiswaSerializer
+    basename = 'api-mahasiswa'
 
 
 class MataKuliahViewSet(viewsets.ModelViewSet):
     queryset = MataKuliah.objects.all()
     serializer_class = MataKuliahSerializer
+    basename = 'api-matakuliah'
 
 
 class PendaftaranViewSet(viewsets.ModelViewSet):
     queryset = Pendaftaran.objects.all()
     serializer_class = PendaftaranSerializer    
+    basename = 'api-pendaftaran'

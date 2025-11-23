@@ -23,7 +23,7 @@ class Pendaftaran(models.Model):
     mahasiswa = models.ForeignKey(Mahasiswa, on_delete=models.CASCADE, related_name='krs')
     matakuliah = models.ForeignKey(MataKuliah, on_delete=models.CASCADE, related_name='pendaftaran')
     semester = models.CharField(max_length=10)
-    nilai = models.CharField(max_length=2, blank=True, null=True)
+    
 
     def __str__(self):
         return f"{self.mahasiswa.nama} - {self.matakuliah.nama_mk}"
