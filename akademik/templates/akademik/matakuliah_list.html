@@ -1,0 +1,10 @@
+<h1>Daftar Mata Kuliah</h1>
+<ul>
+    {% for mk in object_list %}
+        <li>
+            <a href="{% url 'matakuliah-detail' mk.pk %}">
+                {{ mk.nama_mk }} ({{ mk.kode_mk }})
+            </a>
+        </li>
+    {% endfor %}
+</ul>

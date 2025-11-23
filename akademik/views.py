@@ -17,6 +17,16 @@ class MahasiswaDetailView(DetailView):
     model = Mahasiswa
     template_name = "akademik/mahasiswa_detail.html"
 
+class MataKuliahListView(ListView):
+    model = MataKuliah
+    template_name = "akademik/matakuliah_list.html"
+
+
+class MataKuliahDetailView(DetailView):
+    model = MataKuliah
+    template_name = "akademik/matakuliah_detail.html"
+
+
 
 class PendaftaranListView(ListView):
     model = Pendaftaran
@@ -95,7 +105,7 @@ class MahasiswaViewSet(viewsets.ModelViewSet):
     basename = 'api-mahasiswa'
 
 
-class MataKuliahViewSet(viewsets.ModelViewSet):
+class MataKuliahViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = MataKuliah.objects.all()
     serializer_class = MataKuliahSerializer
     basename = 'api-matakuliah'
